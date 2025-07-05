@@ -15,7 +15,7 @@ import (
 	"google.golang.org/grpc/status"
 )
 
-const PORT = 50052
+const PORT = 50012
 
 type server struct {
 	desc.UnimplementedChatV1Server
