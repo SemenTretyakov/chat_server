@@ -17,10 +17,10 @@ get-deps:
 	go get -u google.golang.org/grpc/cmd/protoc-gen-go-grpc
 
 generate:
-	make generate-user-api
+	make generate-chat-api
 
-generate-user-api:
-	@echo "Generating User API protobuf files..."
+generate-chat-api:
+	@echo "Generating chat API protobuf files..."
 	@mkdir -p $(OUTPUT_DIR)
 	protoc \
 		--proto_path=$(PROTO_DIR) \
@@ -28,4 +28,4 @@ generate-user-api:
 		--plugin=protoc-gen-go-grpc=$(LOCAL_BIN)/protoc-gen-go-grpc \
 		--go_out=$(OUTPUT_DIR) --go_opt=paths=source_relative \
 		--go-grpc_out=$(OUTPUT_DIR) --go-grpc_opt=paths=source_relative \
-		$(PROTO_DIR)/user.proto
+		$(PROTO_DIR)/chat.proto
